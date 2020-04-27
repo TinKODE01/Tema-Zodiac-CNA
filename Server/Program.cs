@@ -2,7 +2,7 @@
 
 namespace Server
 {
-    class Start
+    class Program
     {
         static void Main(string[] args)
         {

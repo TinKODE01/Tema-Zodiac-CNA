@@ -17,15 +17,15 @@ namespace Server
 
             DateTime dateUsed = DateTime.ParseExact(date, formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
 
-            int size = Server.listZodiacSigns.Count;
-            for (int i = 0; i < size; ++i)
+            int sizeOfList = Server.listZodiac.Count;
+            for (int i = 0; i < sizeOfList; ++i)
             {
-                if (dateUsed.Month == Int32.Parse(Server.listZodiacSigns[i].StartMonth)
-                    && dateUsed.Day >= Int32.Parse(Server.listZodiacSigns[i].StartDay)
-                    || dateUsed.Month == Int32.Parse(Server.listZodiacSigns[i].FinishMonth)
-                    && dateUsed.Day <= Int32.Parse(Server.listZodiacSigns[i].FinishDay))
+                if (dateUsed.Month == Int32.Parse(Server.listZodiac[i].StartMonth)
+                    && dateUsed.Day >= Int32.Parse(Server.listZodiac[i].StartDay)
+                    || dateUsed.Month == Int32.Parse(Server.listZodiac[i].FinishMonth)
+                    && dateUsed.Day <= Int32.Parse(Server.listZodiac[i].FinishDay))
                 {
-                    return Server.listZodiacSigns[i].Name;
+                    return Server.listZodiac[i].Name;
                 }
             }
 

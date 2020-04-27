@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class ZodiacSign
+    public class Zodiac
     {
-        public ZodiacSign(string name, string startMonth, string startDay,
+        public Zodiac(string name, string startMonth, string startDay,
             string stopMonth, string stopDay)
         {
             this.name = name;

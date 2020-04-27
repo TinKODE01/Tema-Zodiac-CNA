@@ -11,7 +11,7 @@ namespace Server
 
     class Server : IDisposable
     {
-        public static List<ZodiacSign> listZodiacSigns = new List<ZodiacSign>();
+        public static List<Zodiac> listZodiac = new List<Zodiac>();
 
         public Grpc.Core.Server GrpcServer { get; private set; }
 
@@ -42,14 +42,14 @@ namespace Server
 
             Console.WriteLine(string.Format("Server started ({0}:{1}).", Configuration.HOST, Configuration.PORT));
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\ZodiacSigns.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\Zodiac.txt");
 
             string line;
            
             while ((line = file.ReadLine()) != null)
             {
-                string[] words = line.Split(' ');
-                listZodiacSigns.Add(new ZodiacSign(words[0], words[1], words[2], words[3], words[4]));
+                string[] words = line.Split(' ','.','-');
+                listZodiac.Add(new Zodiac(words[0], words[1], words[2], words[3], words[4]));
             }
             file.Close();
 
